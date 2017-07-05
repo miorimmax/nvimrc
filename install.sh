@@ -22,4 +22,9 @@ unset RBENV_VERSION
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-nvim -c 'let g:plug_window=""' +PlugClean! +PlugInstall! +PlugUpdate! +qall
+nvim -c 'let g:plug_window=""' \
+  +PlugClean! \
+  +PlugInstall! \
+  +PlugUpdate! \
+  +UpdateRemotePlugins \
+  +qall
