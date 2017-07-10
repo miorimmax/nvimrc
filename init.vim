@@ -3,111 +3,26 @@ let mapleader = ','
 
 " Plugins
 call plug#begin()
-
-  " Sane defaults
-  Plug 'tpope/vim-sensible'
-
-  " Dark color scheme
-  Plug 'joshdick/onedark.vim'
-
-  let g:onedark_terminal_italics = 0
-  let g:onedark_termcolors = 256
-
-  " Fancy status line
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-
-  let g:airline_theme = 'onedark'
-  let g:airline_powerline_fonts = 1
-  let g:airline_skip_empty_sections = 1
-  let g:airline#extensions#nerd_tree#enabled = 1
-  let g:airline#extensions#tabline#enabled = 0
-  let g:airline#extensions#tabline#show_close_button = 0
-
-  " File tree navigation
-  Plug 'scrooloose/nerdtree'
-
-  map <leader>tt :NERDTreeToggle<CR>
-  map <leader>tx :NERDTreeClose<CR>
-  map <leader>to :NERDTreeFind<CR>
-
-  " Fuzzy file search
-  Plug 'ctrlpvim/ctrlp.vim'
-
-  let g:ctrlp_map = '<Leader>o'
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-  " Remaps '.' so plugins can hook into it (instead of just executing last command)
-  Plug 'tpope/vim-repeat'
-
-  " Maps to delete, change and add surroundings (quotes, parenthesis, brackets, XML/HTML tags)
-  Plug 'tpope/vim-surround'
-
-  " Automatic ctags files management
-  Plug 'ludovicchabant/vim-gutentags'
-
-  " Support to several programming languages
-  Plug 'sheerun/vim-polyglot'
-
-  " Rainbow parentheses
-  Plug 'kien/rainbow_parentheses.vim'
-
-  map <leader>rp :RainbowParenthesesToggleAll<CR>
-
-  let g:rbpt_colorpairs = [
-        \ ['64', '#404040'],
-        \ ['128', '#808080'],
-        \ ['112', '#707070'],
-        \ ['96', '#606060'],
-        \ ['80', '#505050'],
+  let s:plugins = [
+        \ 'sensible',
+        \ 'onedark',
+        \ 'airline',
+        \ 'nerdtree',
+        \ 'ctrlp',
+        \ 'surround',
+        \ 'rainbow',
+        \ 'gutentags',
+        \ 'polyglot',
+        \ 'deoplete',
+        \ 'clojure',
+        \ 'ruby',
+        \ 'python',
+        \ 'java'
         \ ]
 
-  autocmd BufEnter clojure RainbowParenthesesToggle
-  autocmd Syntax clojure RainbowParenthesesLoadRound
-  autocmd Syntax clojure RainbowParenthesesLoadSquare
-  autocmd Syntax clojure RainbowParenthesesLoadBraces
-
-  " Code completion
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#sources = {}
-  let g:deoplete#sources._ = ['buffer', 'tag', 'file']
-  let g:deoplete#sources.clojure = ['acid']
-  let g:deoplete#keyword_patterns = {}
-  let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.]*'
-
-  " Clojure
-  Plug 'clojure-vim/acid.nvim'      " Interactive development
-
-  map <leader>ar  :AcidRequire<CR>
-  map <leader>agd :AcidGoToDefinition<CR>
-
-  Plug 'clojure-vim/async-clj-omni' " Code completion
-
-  Plug 'guns/vim-sexp' " S expressions
-  let g:sexp_enable_insert_mode_mappings = 0
-
-  Plug 'tpope/vim-sexp-mappings-for-regular-people'
-
-  " Ruby
-  Plug 'Shougo/deoplete-rct'
-
-  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-  autocmd FileType ruby,eruby let g:ruby_minlines = 1000
-  autocmd FileType ruby,eruby let g:ruby_spellcheck_strings = 1
-  autocmd FileType ruby,eruby compiler ruby
-
-  " Python
-  Plug 'zchee/deoplete-jedi'
-
-  " Java
-  Plug 'artur-shaik/vim-javacomplete2'
-
-  autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
+  for $plugin in s:plugins
+    source $HOME/.config/nvim/plugins.d/$plugin.vim
+  endfor
 call plug#end()
 
 " Look and feel
