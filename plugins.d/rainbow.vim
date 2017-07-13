@@ -11,7 +11,10 @@ let g:rbpt_colorpairs = [
       \ ['80', '#505050'],
       \ ]
 
+syntax on
+
 autocmd VimEnter * RainbowParenthesesToggle
 autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
+autocmd Syntax * RainbowParenthesesLoadChevrons
