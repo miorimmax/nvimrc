@@ -5,7 +5,7 @@ let mapleader = ','
 call plug#begin()
   let s:plugins = [
         \ 'sensible',
-        \ 'onedark',
+        \ 'one',
         \ 'airline',
         \ 'nerdtree',
         \ 'ctrlp',
@@ -27,7 +27,7 @@ call plug#end()
 
 " Look and feel
 set background=dark
-colorscheme onedark
+colorscheme one
 
 if (has('termguicolors'))
   set termguicolors
