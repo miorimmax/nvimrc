@@ -4,6 +4,7 @@ let mapleader = ','
 " Plugins
 call plug#begin()
   let s:plugins = [
+        \ 'editorconfig',
         \ 'sensible',
         \ 'one',
         \ 'airline',
