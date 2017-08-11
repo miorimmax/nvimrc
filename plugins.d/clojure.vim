@@ -6,8 +6,8 @@ Plug 'clojure-vim/acid.nvim'
 
 let g:acid_log_messages = 1
 
-map <leader>ar  :AcidRequire<CR>
-map <leader>agd :AcidGoToDefinition<CR>
+Plug 'guns/vim-clojure-static'
+let g:clojure_align_subforms = 1
 
 Plug 'clojure-vim/async-clj-omni'
 
