@@ -14,7 +14,7 @@ let g:rbpt_colorpairs = [
 syntax on
 
 autocmd VimEnter * RainbowParenthesesToggle
-autocmd Syntax * RainbowParenthesesLoadRound
-autocmd Syntax * RainbowParenthesesLoadSquare
-autocmd Syntax * RainbowParenthesesLoadBraces
-autocmd Syntax * RainbowParenthesesLoadChevrons
+autocmd Syntax clojure RainbowParenthesesLoadRound
+autocmd Syntax clojure RainbowParenthesesLoadSquare
+autocmd Syntax clojure RainbowParenthesesLoadBraces
+autocmd Syntax clojure RainbowParenthesesLoadChevrons
