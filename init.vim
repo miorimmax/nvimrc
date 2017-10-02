@@ -82,3 +82,6 @@ set conceallevel=2
 set concealcursor=nvi
 
 set wildmode=list:longest
+
+" Terminal
+tnoremap <Esc> <C-\><C-n>
