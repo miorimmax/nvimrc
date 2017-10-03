@@ -18,7 +18,8 @@ call plug#begin()
         \ 'clojure',
         \ 'ruby',
         \ 'python',
-        \ 'java'
+        \ 'java',
+        \ 'iron'
         \ ]
 
   for $plugin in s:plugins
