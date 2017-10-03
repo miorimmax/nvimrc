@@ -1,1 +1,1 @@
-Plug 'hkupty/iron.nvim', { 'do': 'UpdateRemotePlugins' }
+Plug 'hkupty/iron.nvim'
