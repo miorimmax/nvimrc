@@ -90,3 +90,4 @@ set wildmode=list:longest
 
 " Terminal
 tnoremap <Esc> <C-\><C-n>
+autocmd TermOpen * setlocal nonumber
