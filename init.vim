@@ -4,6 +4,7 @@ let mapleader = ','
 " Plugins
 call plug#begin()
   let s:plugins = [
+        \ 'ncm',
         \ 'editorconfig',
         \ 'sensible',
         \ 'one',
@@ -14,7 +15,6 @@ call plug#begin()
         \ 'rainbow',
         \ 'gutentags',
         \ 'polyglot',
-        \ 'deoplete',
         \ 'clojure',
         \ 'ruby',
         \ 'python',
