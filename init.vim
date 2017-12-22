@@ -40,7 +40,7 @@ set number
 
 set colorcolumn=0
 
-set textwidth=100
+set textwidth=120
 
 set formatoptions-=t
 
