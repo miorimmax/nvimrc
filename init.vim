@@ -4,6 +4,7 @@ let mapleader = ','
 " Plugins
 call plug#begin()
   let s:plugins = [
+        \ 'iron',
         \ 'ncm',
         \ 'editorconfig',
         \ 'sensible',
@@ -18,8 +19,7 @@ call plug#begin()
         \ 'clojure',
         \ 'ruby',
         \ 'python',
-        \ 'java',
-        \ 'iron'
+        \ 'java'
         \ ]
 
   for $plugin in s:plugins
