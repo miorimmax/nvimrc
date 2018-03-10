@@ -1,3 +1,8 @@
+" Python
+let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog  = '/usr/local/opt/python@2/bin/python2'
+let g:ruby_host_prog    = '/Users/max/.rbenv/versions/2.3.3/bin/ruby'
+
 " Remap the Leader key
 let mapleader = ','
 
