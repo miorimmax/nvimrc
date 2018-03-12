@@ -1,11 +1,14 @@
 " JavaScript Syntax
-Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim'
 
 " TypeScript Syntax
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 " JSX Syntax
-Plug 'ianks/vim-tsx'
+Plug 'peitalin/vim-jsx-typescript'
+
+" Typescript
+Plug 'mhartington/nvim-typescript'
 
 let g:ale_linters.javascript = ['eslint']
 let g:ale_linters.typescript = ['tslint']
