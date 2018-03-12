@@ -9,22 +9,23 @@ let mapleader = ','
 " Plugins
 call plug#begin()
   let s:plugins = [
-        \ 'iron',
-        \ 'ncm',
-        \ 'editorconfig',
+        \ 'deoplete',
+        \ 'ale',
         \ 'sensible',
-        \ 'one',
-        \ 'airline',
         \ 'nerdtree',
         \ 'ctrlp',
+        \ 'editorconfig',
         \ 'surround',
-        \ 'rainbow',
         \ 'gutentags',
-        \ 'polyglot',
+        \ 'one',
+        \ 'airline',
+        \ 'iron',
+        \ 'react-native',
         \ 'clojure',
         \ 'ruby',
         \ 'python',
-        \ 'java'
+        \ 'java',
+        \ 'polyglot'
         \ ]
 
   for $plugin in s:plugins
