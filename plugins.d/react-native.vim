@@ -11,9 +11,3 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'mhartington/nvim-typescript'
 
 let g:nvim_typescript#default_mappings = 1
-
-let g:ale_linters.javascript = ['eslint']
-let g:ale_linters.typescript = ['tslint']
-
-let g:ale_fixers.javascript = ['eslint']
-let g:ale_fixers.typescript = ['tslint']
