@@ -54,7 +54,7 @@ set splitbelow
 set splitright
 
 set fillchars=""
-highlight VertSplit guibg=#2c323c
+highlight VertSplit guifg=#2c323c
 highlight EndOfBuffer guifg=bg
 
 " Search
