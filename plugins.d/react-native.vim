@@ -1,6 +1,9 @@
 " JavaScript Syntax
 Plug 'othree/yajs.vim'
 
+" JavaScript Completion
+Plug 'carlitux/deoplete-ternjs'
+
 " TypeScript Syntax
 Plug 'HerringtonDarkholme/yats.vim'
 
