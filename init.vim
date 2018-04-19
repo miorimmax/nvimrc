@@ -89,9 +89,6 @@ imap <C-Space> <C-X><C-O>
 set completeopt=longest,menuone
 set pumheight=16
 
-set conceallevel=2
-set concealcursor=nvi
-
 set wildmode=list:longest
 
 " Terminal
