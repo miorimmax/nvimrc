@@ -56,11 +56,16 @@ autocmd TermOpen * setlocal nonumber
 
 
 " Clojure
-Plug 'clojure-vim/acid.nvim'
+Plug 'tpope/vim-salve'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fireplace'
 Plug 'guns/vim-clojure-static'
-Plug 'clojure-vim/async-clj-highlight'
+Plug 'guns/vim-clojure-highlight'
 Plug 'clojure-vim/async-clj-omni'
 let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
+
+" Evaluate Clojure buffers on load
+autocmd BufReadPost *.clj try | silent! Require | catch /^Fireplace/ | endtry
 
 
 " Kotlin
