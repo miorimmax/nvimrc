@@ -72,6 +72,9 @@ autocmd BufReadPost *.clj try | silent! Require | catch /^Fireplace/ | endtry
 Plug 'udalov/kotlin-vim'
 
 
+" Swift
+Plug 'keith/swift.vim'
+
 call plug#end()
 
 
