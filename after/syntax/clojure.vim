@@ -3,6 +3,7 @@ syntax keyword clojureMacro against-background provided
 syntax keyword clojureMacro future-facts future-fact
 syntax keyword clojureMacro facts fact
 syntax keyword clojureMacro flow
+syntax keyword clojureMacro tabular
 syntax keyword clojureMacro namespace-state-changes with-state-changes
 syntax keyword clojureFunc after around before
 syntax keyword clojureFunc just \contains has has-prefix has-suffix
