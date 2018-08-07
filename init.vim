@@ -56,7 +56,6 @@ autocmd TermOpen * setlocal nonumber
 
 
 " Clojure
-Plug 'tpope/vim-salve'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fireplace'
 Plug 'guns/vim-clojure-static'
