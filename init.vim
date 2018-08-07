@@ -34,6 +34,23 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_close_button = 0
 
 
+" Language server protocol
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+set completefunc=LanguageClient#complete
+set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
+
+let g:LanguageClient_serverCommands = {}
+let g:LanguageClient_rootMarkers = {}
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+
 " Code completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
@@ -59,15 +76,12 @@ autocmd TermOpen * setlocal nonumber
 
 
 " Clojure
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fireplace'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
-Plug 'clojure-vim/async-clj-omni'
-let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 
-" Evaluate Clojure buffers on load
-autocmd BufReadPost *.clj try | silent! Require | catch /^Fireplace/ | endtry
+let g:LanguageClient_serverCommands.clojure = ['clojure-lsp']
+let g:LanguageClient_rootMarkers.clojure = ['project.clj', 'deps.edn']
+let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 
 
 " Kotlin
@@ -76,6 +90,18 @@ Plug 'udalov/kotlin-vim'
 
 " Swift
 Plug 'keith/swift.vim'
+
+
+" TypeScript
+let g:LanguageClient_serverCommands['javascript']     = ['javascript-typescript-stdio']
+let g:LanguageClient_serverCommands['javascript.jsx'] = ['javascript-typescript-stdio']
+let g:LanguageClient_serverCommands['typescript']     = ['javascript-typescript-stdio']
+let g:LanguageClient_serverCommands['typescript.tsx'] = ['javascript-typescript-stdio']
+
+let g:LanguageClient_rootMarkers['javascript']     = ['package.json']
+let g:LanguageClient_rootMarkers['javascript.jsx'] = ['package.json']
+let g:LanguageClient_rootMarkers['typescript']     = ['package.json']
+let g:LanguageClient_rootMarkers['typescript.tsx'] = ['package.json']
 
 call plug#end()
 
