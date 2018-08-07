@@ -41,6 +41,9 @@ let g:deoplete#keyword_patterns = {}
 
 
 " Code helpers
+Plug 'Shougo/echodoc.vim'
+set cmdheight=2
+
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
